@@ -1,11 +1,9 @@
 <template>
-    <div class="section section-examples" data-background-color="black">
-        <div
-            style="width: 100%;
-        height: 100%;"
-        >
-            <!-- 시작 -->
-            <div class="menu__links">
+    
+        <div class="header" style="background-image:url('img/header.jpg')">
+          
+            <div class="content">
+                 <div class="menu__links" >
                 <button class="fillter_1">실내</button>
                 <button class="fillter_2">샤워시설</button>
                 <button class="fillter_3">주차장</button>
@@ -13,39 +11,18 @@
                 <button class="fillter_5">레슨 가능</button>
                 <button class="fillter_6">비거리</button>
             </div>
+                   
+        <div  style="height:560px;overflow-y:scroll;margin-bottom:0">
+        
+            <!-- 시작 -->
+            
             <div
                 class="card"
                 @click="goTodetail(data.index)"
                 v-for="(data, index) in data"
                 :key="index"
             >
-                <!-- <b-card-img
-                    :src="data.image"
-                    style="height: 130px; width: 130px; float: left; margin-right: 20px"
-                ></b-card-img> -->
-                <!-- <div
-                    class="card-text"
-                    style="max-width: 500px; float: left; margin-top: 10px;"
-                >
-                    <h4 style="float: left;color:black">
-                        {{ data.name }}
-                    </h4>
-                    <br />
-
-                    <p style="float: left;color:black">{{ data.call_num }}</p>
-                    <br />
-                    <div style="float: left; max-width: 300px">
-                        <button type="button" class="btn btn-warning" disabled>
-                            샤워장
-                        </button>
-                        <button type="button" class="btn btn-info" disabled>
-                            주차장
-                        </button>
-                        <button type="button" class="btn btn-success" disabled>
-                            레슨
-                        </button>
-                    </div>
-                </div> -->
+             
                 <div class="card-header" style="margin:0 auto">
                     {{ data.name }}
                 </div>
@@ -54,12 +31,15 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
+        </div>
+    
 </template>
 <script>
     import golf from "../../public/연습장.json";
     export default {
         name: "list",
+        bodyClass: 'list-page',
         data() {
             return {
                 // products:ttt.data.products
@@ -101,23 +81,15 @@
     /* .list{
   height:500px;
 } */
-    .list button {
-        color: black;
-        min-width: 40px;
-        height: 20px;
-        text-align: center;
-        font-size: 13px;
-        float: left;
-        padding: 0px;
-        margin-left: 5px;
-    }
-
+    
     .menu__links {
         display: flex;
         padding: 10px 0px;
         font-weight: bold;
-        overflow-x: auto;
+        overflow-x: scroll;
         white-space: nowrap;
+        margin-top: 70px;
+        position: relative;
     }
 
     .menu__links button {

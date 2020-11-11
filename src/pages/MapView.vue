@@ -88,7 +88,7 @@
                 var infowindows = new Array();
                 var markers = new Array();
                 var imageSrc =
-                        "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/146a1df5-f318-4a15-a4ec-69e3733b8957/marker.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201110%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201110T144106Z&X-Amz-Expires=86400&X-Amz-Signature=0ec13167a5b9cc515cec07910b93d0612f19d5325ec2c93a87a380cb4615238d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22marker.png%22", // 마커이미지의 주소입니다
+                        "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/146a1df5-f318-4a15-a4ec-69e3733b8957/marker.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201111%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201111T153052Z&X-Amz-Expires=86400&X-Amz-Signature=6ffd4ae133c6ddf06190b7d6ff053e15472008b446f7bd40fc1898b8e5eeae9b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22marker.png%22", // 마커이미지의 주소입니다
                     imageSize = new kakao.maps.Size(36, 38), // 마커이미지의 크기입니다
                     imageOption = { offset: new kakao.maps.Point(20, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
                 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다

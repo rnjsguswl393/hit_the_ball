@@ -1,11 +1,11 @@
 // style for the MapView page
 .index-page {
     .page-header {
-        height: 125vh;
+        height: 100%;
 
         .container {
             > .content-center {
-                top: 37%;
+                top:200%;
             }
         }
 
@@ -76,7 +76,13 @@
         }
     }
 }
-
+.list-page {
+    .header {
+        overflow: scroll;
+        height: 100%;
+        color: rgba($primary-color, 0.95);
+    }
+}
 // style for the profile page
 .profile-page {
     .page-header {

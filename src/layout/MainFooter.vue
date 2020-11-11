@@ -5,12 +5,15 @@
         :data-background-color="white"
         
     > -->
-    <div>
-        <div class="footer" type="primary" :transparent="transparent">
-            <nav class="navbar fixed-bottom" style="margin-bottom:0;">
+    <!-- <navbar> -->
+        <div position="fixed" bottom=0 menu-classes="ml-auto" class="footer" type="primary" :transparent="transparent">
+            
+            <!-- <nav class="navbar fixed-bottom" style="margin-bottom:0;"> -->
                 <ul style="white-space:nowrap;  overflow:hidden;">
+                    
                     <li>
                         <router-link to="/">
+                        
                             <i class="fas fa-home" style="color: #ff8001"></i>
                         </router-link>
                     </li>
@@ -38,7 +41,7 @@
                         </router-link>
                     </li>
                 </ul>
-            </nav>
+            <!-- </nav> -->
             <!-- <div class="copyright">
         &copy; {{ year }}, Designed by
         <a href="https:///www.invisionapp.com" target="_blank" rel="noopener"
@@ -55,13 +58,17 @@
 
             <!-- </footer> -->
         </div>
-    </div>
+    <!-- </navbar> -->
 </template>
 <script>
+ import { Popover } from "element-ui";
     export default {
         props: {
             transparent: Boolean,
             type: String,
+        },
+        components: {
+            [Popover.name]: Popover,
         },
         // data() {
         //     return {

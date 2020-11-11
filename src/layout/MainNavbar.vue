@@ -34,21 +34,13 @@
           <p>Download</p>
         </a>
       </li> -->
-            <li class="nav-item">
-                <a class="nav-link" target="_blank">
-                    <router-link to="/">
-                        <i class="now-ui-icons business_chart-pie-36"></i>
-                        HOME</router-link
-                    >
-                </a>
-            </li>
-            <drop-down
+            <!-- <drop-down
                 tag="li"
                 title="HOME"
                 icon="now-ui-icons design_app"
                 class="nav-item"
-            >
-                <nav-link to="/">
+            > -->
+                <nav-link to="/" >
                     <i class="now-ui-icons business_chart-pie-36"></i> HOME
                 </nav-link>
                 <!-- <a
@@ -58,13 +50,13 @@
         >
           <i class="now-ui-icons design_bullet-list-67"></i> Documentation
         </a> -->
-            </drop-down>
-            <drop-down
+            <!-- </drop-down> -->
+            <!-- <drop-down
                 tag="li"
                 title="MY PAGE"
                 icon="now-ui-icons design_image"
                 class="nav-item"
-            >
+            > -->
                 <nav-link to="/MapView">
                     <i class="now-ui-icons education_paper"></i> MapView
                 </nav-link>
@@ -74,7 +66,7 @@
                 <nav-link to="/profile">
                     <i class="now-ui-icons users_single-02"></i> Profile
                 </nav-link>
-            </drop-down>
+            <!-- </drop-down> -->
             <!-- <li class="nav-item">
         <a
           class="nav-link btn btn-neutral"
@@ -130,7 +122,9 @@
 </template>
 
 <script>
-    import { DropDown, Navbar, NavLink } from "@/components";
+    // import { DropDown, Navbar, NavLink } from "@/components";
+    import { Navbar, NavLink } from "@/components";
+
     import { Popover } from "element-ui";
     export default {
         name: "main-navbar",
@@ -139,7 +133,7 @@
             colorOnScroll: Number,
         },
         components: {
-            DropDown,
+            // DropDown,
             Navbar,
             NavLink,
             [Popover.name]: Popover,
