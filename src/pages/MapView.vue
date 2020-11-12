@@ -23,15 +23,29 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div v-if="this.info" class="menu__contact">
-                <a
-                    >{{
-                        this.info.new_addr
-                            ? this.info.new_addr
-                            : this.info.old_addr
-                    }}
-                </a>
-                <!-- <a v-else>{{ this.data }}</a> -->
+            <div
+                @click="goTodetail(info.index)"
+                v-if="this.info"
+                class="menu__contact"
+            >
+                <div
+                    style="float:left;width:100px;height:100px;margin-left:10px"
+                >
+                    <img
+                        src="https://gdimg.gmarket.co.kr/949372591/still/600?ver=0"
+                    />
+                </div>
+                <div style="float:left;width:300px">
+                    <a style="white-space:normal;"
+                        >{{
+                            this.info.new_addr
+                                ? this.info.new_addr
+                                : this.info.old_addr
+                        }} </a
+                    ><br />
+                    <a>비거리 : 200M </a><br />
+                    <a>타석수 : 10개 </a>
+                </div>
             </div>
         </section>
         <div class="menu__overlay" hidden="hidden"></div>
@@ -111,21 +125,8 @@
                     });
                     // 생성된 마커를 배열에 담아줍니다.
                     markers.push(marker);
-                    // marker.setMap(map);
-                    // var iwContent =
-                    //     "<div> <strong>" +
-                    //     positions[i].name +
-                    //     "</strong><p>" +
-                    //     //positions[i].new_addr+
-                    //     (positions[i].new_addr
-                    //         ? positions[i].new_addr
-                    //         : positions[i].old_addr) +
-                    //     "</p></div>";
-                    var iwContent = positions[i].name;
-                    //인포윈도우 닫기 버튼
-                    // var iwRemoveable = true;
 
-                    // 인포윈도우를 생성합니다
+                    var iwContent = positions[i].name;
 
                     var infowindow = new kakao.maps.InfoWindow({
                         zIndex: 1,
@@ -200,21 +201,6 @@
                     // button.setAttribute('hidden', '');
                     menu.removeAttribute("hidden");
                     overlay.removeAttribute("hidden");
-                    // if (vm.){
-
-                    // }
-                    // var list = vm.data;
-                    // console.log(list);
-                    // console.log(vm.selectedWindow.$b);
-                    // for (var i = 1; i < list.length; i++) {
-                    //     if (vm.selectedWindow.$b == list[i].name) {
-                    //         var info = list[i];
-                    //         vm.info = info;
-                    //         // console.log(vm.info);
-                    //     } else {
-                    //         console.log("안돼써");
-                    //     }
-                    // }
                 };
             },
             hide() {
@@ -224,6 +210,10 @@
                 menu.setAttribute("hidden", "");
                 overlay.setAttribute("hidden", "");
                 // button.removeAttribute("hidden");
+            },
+            goTodetail(prodId) {
+                let proId = prodId;
+                this.$router.push({ name: "detail", params: { Pid: proId } });
             },
         },
     };
@@ -273,18 +263,6 @@
         font-size: 18px;
         font-weight: bold;
     }
-    /* .info .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #888;
-  width: 17px;
-  height: 17px;
-  background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
-} */
-    /* .info .close:hover {
-  cursor: pointer;
-} */
     .info .body {
         position: relative;
         overflow: hidden;
@@ -314,16 +292,6 @@
         color: #888;
         overflow: hidden;
     }
-    /* .info:after {
-  content: '';
-  position: absolute;
-  margin-left: -12px;
-  left: 50%;
-  bottom: 0;
-  width: 22px;
-  height: 12px;
-  background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png');
-} */
     .info .link {
         color: #5085bb;
     }
@@ -342,7 +310,7 @@
         display: block;
         width: 100%;
         background: var(--light);
-        padding-bottom: 145px;
+        padding-bottom: 50px;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         box-shadow: 0px -9px 50px -30px black;

@@ -6,43 +6,41 @@
         
     > -->
     <!-- <navbar> -->
-        <div position="fixed" bottom=0 menu-classes="ml-auto" class="footer" type="primary" :transparent="transparent">
-            
-            <!-- <nav class="navbar fixed-bottom" style="margin-bottom:0;"> -->
-                <ul style="white-space:nowrap;  overflow:hidden;">
-                    
-                    <li>
-                        <router-link to="/">
-                        
-                            <i class="fas fa-home" style="color: #ff8001"></i>
-                        </router-link>
-                    </li>
+    <div
+        position="fixed"
+        bottom="0"
+        menu-classes="ml-auto"
+        class="footer"
+        type="primary"
+        :transparent="transparent"
+    >
+        <!-- <nav class="navbar fixed-bottom" style="margin-bottom:0;"> -->
+        <ul style="white-space:nowrap;  overflow:hidden;">
+            <li>
+                <router-link to="/">
+                    <i class="fas fa-home" style="color: #ff8001"></i>
+                </router-link>
+            </li>
 
-                    <li>
-                        <router-link to="/">
-                            <!-- <i class="far fa-map-marked-alt" style="color: #fc4053"></i> -->
-                            <i
-                                class="fas fa-map-marker-alt"
-                                style="color: #2CA8FF"
-                            ></i>
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/">
-                            <i class="fas fa-list" style="color: #fc4053"></i>
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/">
-                            <i
-                                class="fas fa-chevron-left"
-                                style="color: #2b53a4"
-                            ></i>
-                        </router-link>
-                    </li>
-                </ul>
-            <!-- </nav> -->
-            <!-- <div class="copyright">
+            <li>
+                <router-link to="/Mapview">
+                    <!-- <i class="far fa-map-marked-alt" style="color: #fc4053"></i> -->
+                    <i class="fas fa-map-marker-alt" style="color: #2CA8FF"></i>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/Listview">
+                    <i class="fas fa-list" style="color: #fc4053"></i>
+                </router-link>
+            </li>
+            <li>
+                <div @click="goBack()">
+                    <i class="fas fa-chevron-left" style="color: #2b53a4"></i>
+                </div>
+            </li>
+        </ul>
+        <!-- </nav> -->
+        <!-- <div class="copyright">
         &copy; {{ year }}, Designed by
         <a href="https:///www.invisionapp.com" target="_blank" rel="noopener"
           >Invision</a
@@ -56,12 +54,12 @@
         >.
       </div> -->
 
-            <!-- </footer> -->
-        </div>
+        <!-- </footer> -->
+    </div>
     <!-- </navbar> -->
 </template>
 <script>
- import { Popover } from "element-ui";
+    import { Popover } from "element-ui";
     export default {
         props: {
             transparent: Boolean,
@@ -69,6 +67,11 @@
         },
         components: {
             [Popover.name]: Popover,
+        },
+        methods: {
+            goBack() {
+                window.history.back();
+            },
         },
         // data() {
         //     return {

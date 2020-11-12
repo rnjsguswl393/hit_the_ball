@@ -1,9 +1,7 @@
 <template>
-    
-        <div class="header" style="background-image:url('img/header.jpg')">
-          
-            <div class="content">
-                 <div class="menu__links" >
+    <div class="header" style="background-image:url('img/header.jpg')">
+        <div class="content">
+            <div class="menu__links">
                 <button class="fillter_1">실내</button>
                 <button class="fillter_2">샤워시설</button>
                 <button class="fillter_3">주차장</button>
@@ -11,35 +9,32 @@
                 <button class="fillter_5">레슨 가능</button>
                 <button class="fillter_6">비거리</button>
             </div>
-                   
-        <div  style="height:560px;overflow-y:scroll;margin-bottom:0">
-        
-            <!-- 시작 -->
-            
-            <div
-                class="card"
-                @click="goTodetail(data.index)"
-                v-for="(data, index) in data"
-                :key="index"
-            >
-             
-                <div class="card-header" style="margin:0 auto">
-                    {{ data.name }}
-                </div>
-                <div class="card-footer">
-                    {{ data.call_num }}
+
+            <div style="height:560px;overflow-y:scroll;margin-bottom:0">
+                <!-- 시작 -->
+
+                <div
+                    class="card"
+                    @click="goTodetail(data.index)"
+                    v-for="(data, index) in data"
+                    :key="index"
+                >
+                    <div class="card-header" style="margin:0 auto">
+                        {{ data.name }}
+                    </div>
+                    <div class="card-footer">
+                        {{ data.call_num }}
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
-        </div>
-    
+    </div>
 </template>
 <script>
     import golf from "../../public/연습장.json";
     export default {
         name: "list",
-        bodyClass: 'list-page',
+        bodyClass: "list-page",
         data() {
             return {
                 // products:ttt.data.products
@@ -48,7 +43,7 @@
         },
         mounted() {
             this.callData();
-            console.log(this.data);
+            // console.log(this.data);
         },
         methods: {
             callData() {
@@ -62,6 +57,10 @@
                     }
                 });
                 // console.log(this.data);
+            },
+            goTodetail(prodId) {
+                let proId = prodId;
+                this.$router.push({ name: "detail", params: { Pid: proId } });
             },
         },
     };
@@ -81,7 +80,7 @@
     /* .list{
   height:500px;
 } */
-    
+
     .menu__links {
         display: flex;
         padding: 10px 0px;
@@ -97,7 +96,7 @@
         border-radius: 20px;
         margin-right: 15px;
         height: 30px;
-        min-width: 60px;
+        width: auto;
         outline: none;
     }
     .fillter_1 {

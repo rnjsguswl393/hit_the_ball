@@ -8,6 +8,7 @@ import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import SignUp from "./pages/SignupForm.vue";
 import ListView from "./pages/listView.vue";
+import Detail from "./pages/detailView.vue";
 
 Vue.use(Router);
 
@@ -61,6 +62,18 @@ export default new Router({
             path: "/signup",
             name: "signup",
             components: { default: SignUp, header: MainNavbar },
+            props: {
+                header: { colorOnScroll: 400 },
+            },
+        },
+        {
+            path: "/detail/:Pid",
+            name: "detail",
+            components: {
+                default: Detail,
+                header: MainNavbar,
+                footer: MainFooter,
+            },
             props: {
                 header: { colorOnScroll: 400 },
             },

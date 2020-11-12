@@ -5,7 +5,7 @@
 
         .container {
             > .content-center {
-                top:200%;
+                top: 200%;
             }
         }
 
@@ -80,7 +80,18 @@
     .header {
         overflow: scroll;
         height: 100%;
-        color: rgba($primary-color, 0.95);
+        color: black;
+    }
+}
+.detail-page {
+    .header {
+        overflow: scroll;
+        height: 560px;
+        color: black;
+    }
+    .content {
+        height: 100%;
+        overflow: scroll;
     }
 }
 // style for the profile page
